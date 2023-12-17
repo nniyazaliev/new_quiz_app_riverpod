@@ -1,11 +1,13 @@
 import 'package:quiz_riverpod/models/question.dart';
 import 'package:quiz_riverpod/data/quiz_data.dart';
 
+final QuizServices quizServices = QuizServices();
+
 class QuizServices {
   int index = 0;
   List<Question> questions = [];
 
-  void suroonuToltur() {
+  void init() {
     questions.addAll(questionBank);
   }
 
@@ -19,7 +21,7 @@ class QuizServices {
     return questions[index].question;
   }
 
-  getCorrectAnswer() {
+  bool getCorrectAnswer() {
     return questions[index].answer;
   }
 
